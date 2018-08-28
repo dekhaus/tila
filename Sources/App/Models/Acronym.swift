@@ -1,7 +1,9 @@
-import FluentSQLite
+import FluentPostgreSQL
 import Vapor
 
 final class Acronym: Codable {
+    static let name = "acronyms"
+
     var id: Int?
     var short: String
     var long: String
@@ -12,6 +14,7 @@ final class Acronym: Codable {
     }
 }
 
-extension Acronym: SQLiteModel {}
+extension Acronym: PostgreSQLModel {}
 extension Acronym: Content  {}
 extension Acronym: Migration  {}
+extension Acronym: Parameter{}
